@@ -1,39 +1,45 @@
-# Regression Models Comparison – Boston Housing Dataset
+# AI/ML Regression Playground
 
-This project explores and compares different regression techniques to predict house prices using the classic Boston Housing dataset.  
-The goal is to see how standard Linear Regression performs against regularized models (Ridge, Lasso) and Polynomial Regression.
+This notebook walks through training and evaluating four regression models—**Linear Regression**, **Ridge**, **Lasso**, and **Polynomial Regression**—on the Boston Housing dataset. The goal is to compare their performance using key metrics and visual diagnostics.
 
-## 📂 Project Overview
-We train and evaluate:
-- **Linear Regression**
-- **Ridge Regression**
-- **Lasso Regression**
-- **Polynomial Regression**
+---
 
-Each model is compared using:
-- **RMSE (Root Mean Square Error)**
-- **R-squared**
-- **Residual analysis**
+##  Project Overview
 
-## 📊 Dataset
-Boston Housing dataset contains information about housing in the Boston area, including:
+We explore how each model performs, with a focus on:
+
+- **RMSE (Root Mean Square Error)** – how far off predictions are on average (in the same unit as the target).
+- **R-squared** – how much of the variation in housing prices each model can explain.
+- **Residual plotting** – to examine whether the model errors are randomly distributed or if there's a pattern.
+
+---
+
+##  Dataset
+
+The Boston Housing dataset includes features such as:
+
 - Crime rate
-- Average number of rooms
+- Number of rooms per dwelling
 - Property tax rate
-- Median value of homes (target variable)
+- Median home value (the target variable)
 
-## ⚙️ Steps Performed
-1. Load and explore the dataset.
-2. Split into training and test sets.
-3. Train Linear, Ridge, and Lasso Regression models.
-4. Apply Polynomial Regression for non-linear patterns.
-5. Evaluate with RMSE, R-squared, and residual plots.
-6. Compare results in a summary table.
+---
 
-## 📈 Results
-- Shows how regularization affects performance.
-- Highlights situations where Polynomial Regression improves the fit.
-  ## 📈 Results
+##  Modeling Steps
+
+1. **Load and explore** the dataset (basic stats, distributions).
+2. **Split** into training and testing sets.
+3. Train the following regression models:
+   - Linear Regression  
+   - Ridge Regression  
+   - Lasso Regression  
+   - Polynomial Regression
+4. **Evaluate** each model using RMSE, R-squared, and residual plots.
+5. **Compare** results in a consolidated table and visualize error patterns.
+
+---
+
+##  Results
 
 | Model        | RMSE       | R-squared |
 |--------------|------------|-----------|
@@ -42,25 +48,34 @@ Boston Housing dataset contains information about housing in the Boston area, in
 | Lasso        | 5.015535   | 0.656971  |
 | Polynomial   | 3.816600   | 0.801368  |
 
-**Insights:**
-- Polynomial Regression had the best fit with the lowest RMSE and highest R-squared.
-- Ridge and Lasso were very close to Linear Regression.
-- Lasso slightly underperformed compared to Ridge and Linear.
+**Key insights:**
+- **Polynomial Regression** clearly outperformed the other models — lower RMSE and higher R-squared indicate it captured the data pattern more effectively.
+- **Ridge** and **Lasso** performed similarly to Linear Regression, with only minor differences.
+- **Lasso** slightly underperformed compared to Ridge and Linear in this dataset context.
 
-### 📉 Residual Plot
-Below is the residual distribution for each model.  
-A good model should have residuals scattered randomly around zero, without clear patterns.
+---
 
-![Residual Plot](<img width="882" height="534" alt="image" src="https://github.com/user-attachments/assets/8425b7d8-3083-4e1d-978b-b320ee25203c" />)
+###  Residual Plot
 
+Below is the residual distribution for each model, showing how errors vary across predicted values. A well-behaved model shows errors scattered around zero, without systematic patterns.
 
-## 🛠️ Technologies Used
-- Python
-- pandas
-- scikit-learn
-- matplotlib
+![Residual Plot](residual_plot.png)
 
-## ▶️ How to Run
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/regression-models-comparison.git
+---
+
+##  Technologies Used
+
+- Python  
+- pandas  
+- scikit-learn  
+- matplotlib  
+
+---
+
+##  Getting Started
+
+```bash
+git clone https://github.com/Adeel-Gill/ai-ml-regression-playground.git
+cd ai-ml-regression-playground
+pip install -r requirements.txt
+jupyter notebook house-price-prediction-regression.ipynb
