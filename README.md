@@ -33,6 +33,26 @@ Boston Housing dataset contains information about housing in the Boston area, in
 ## 📈 Results
 - Shows how regularization affects performance.
 - Highlights situations where Polynomial Regression improves the fit.
+  ## 📈 Results
+
+| Model        | RMSE       | R-squared |
+|--------------|------------|-----------|
+| Linear       | 4.928602   | 0.668759  |
+| Ridge        | 4.947443   | 0.666222  |
+| Lasso        | 5.015535   | 0.656971  |
+| Polynomial   | 3.816600   | 0.801368  |
+
+**Insights:**
+- Polynomial Regression had the best fit with the lowest RMSE and highest R-squared.
+- Ridge and Lasso were very close to Linear Regression.
+- Lasso slightly underperformed compared to Ridge and Linear.
+
+### 📉 Residual Plot
+Below is the residual distribution for each model.  
+A good model should have residuals scattered randomly around zero, without clear patterns.
+
+![Residual Plot](<img width="882" height="534" alt="image" src="https://github.com/user-attachments/assets/8425b7d8-3083-4e1d-978b-b320ee25203c" />)
+
 
 ## 🛠️ Technologies Used
 - Python
